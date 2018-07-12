@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  asp.netwebapi1:
+    image: asp.netwebapi1
+    build:
+      context: .\ASP.Net WebAPI1
+      dockerfile: Dockerfile

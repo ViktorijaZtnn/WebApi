@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ASP.Net_WebAPI1.Models.Model1Container> 
+@{
+    var grid = new WebGrid(Model);
+}
+<html>
+<head>
+    <title>WebGrid1</title>
+</head>
+<body>    <h1>WebGrid PC</h1>
+    <div style="display:none;" id="grid">
+        @grid.GetHtml()
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Description</th>
+                <th scope="col">Cost</th>
+                <th scope="col">InStock</th>
+                <th scope="col">DatePC</th>
+            </tr>
+        </thead>
+        @foreach (ASP.Net_WebAPI1.Models.Company row in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@row.Id</td>
+                    <td>@row.Address</td>
+                    <td>@row.Name</td>
+                    <td>@row.Phone</td>
+                    <td>@row.DataOfFund</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+</body>
+</html>
